@@ -1,0 +1,199 @@
+:root {
+    --clr-dark-mainbg: hsla(217, 54%, 11%, 1);
+    --clr-dark-cardbg: hsla(216, 51%, 16%, 1);
+    --clr-dark-line: hsla(216, 32%, 27%, 1);
+    --clr-primary: hsla(0, 0%, 100%, 1);
+    --clr-light: hsla(178, 100%, 50%, 1);
+    --clr-soft: hsl(215, 51%, 70%);
+
+    --ff-main: 'Outfit', sans-serif;
+    --fw-normal: 300;
+    --fw-bold: 500;
+    --fw-max: 600;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*end of CSS reset*/
+body {
+    font-family: var(--ff-main);
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: var(--clr-dark-mainbg);
+    
+}
+
+.card {
+    max-width: 350px;
+    margin: 1em 1.5em;
+    background-color: var(--clr-dark-cardbg);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img,
+.card-content {
+    padding: 1.8em;
+}
+
+.main-img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.img-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: hsla(178, 100%, 50%, 0.5);
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon {
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+   
+}
+
+h1 {
+    margin-top: 0.5em;
+    color: var(--clr-primary);
+    font-weight: var(--fw-max);
+    font-size: 1.375rem;
+}
+h1:hover, h1:focus, span:hover, span:focus {
+    cursor: pointer;
+    color: var(--clr-light);
+}
+.card-text {
+    color: var(--clr-soft);
+    font-size: 1.125em;
+    font-weight: var(--fw-normal);
+    line-height: 26px;
+    margin-top: 0.8em;
+}
+
+.numbers {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid hsla(216, 32%, 27%, 1);
+    
+}
+
+.light, .timeout {
+    font-size: 0.9375em;
+    font-weight: var(--fw-normal);
+    color: var(--clr-light);
+    align-items: center;
+    vertical-align: middle;
+    padding: 0.6em 0;
+    
+
+}
+
+.light::before {
+    content: url("images/icon-ethereum.svg");
+    margin-right: 0.5em;
+
+}
+
+.timeout::before {
+    content: url("images/icon-clock.svg");
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5em;
+    
+    
+}
+
+.author-img {
+    width: 33px;
+    margin-right: 1em;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.author {
+    color:var(--clr-soft);
+}
+span {
+    color: var(--clr-primary);
+}
+.attribution {
+    margin-top: 1em;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
